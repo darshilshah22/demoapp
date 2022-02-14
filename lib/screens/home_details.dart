@@ -21,7 +21,11 @@ class _HomeDetailsState extends State<HomeDetails> {
           backgroundColor: Colors.white,
           centerTitle: true,
           leading:
-          const Icon(Icons.chevron_left, color: Colors.black, size: 40),
+          InkWell(
+              onTap: (){
+                Navigator.of(context).pop();
+              },
+              child: const Icon(Icons.chevron_left, color: Colors.black, size: 40)),
           title: Text("Ongoing Event",
               textAlign: TextAlign.left,
               overflow: TextOverflow.ellipsis,

@@ -43,7 +43,11 @@ class _FindFriendsState extends State<FindFriends> {
           backgroundColor: Colors.white,
           centerTitle: true,
           leading:
-          const Icon(Icons.chevron_left, color: Colors.black, size: 40),
+          InkWell(
+            onTap: (){
+              Navigator.of(context).pop();
+            },
+              child: const Icon(Icons.chevron_left, color: Colors.black, size: 40)),
           title: Text("Save Card",
               textAlign: TextAlign.left,
               overflow: TextOverflow.ellipsis,
@@ -142,7 +146,7 @@ class _FindFriendsState extends State<FindFriends> {
             end: Alignment.bottomCenter,
             stops: [1,1],
             colors: [
-              index == 4 ? Colors.transparent : Colors.blue,
+              Colors.blue,
               Colors.blue,
             ]),
         borderRadius: BorderRadius.circular(10),

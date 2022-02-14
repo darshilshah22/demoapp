@@ -50,7 +50,11 @@ class _LocationSetState extends State<LocationSet> {
           backgroundColor: Colors.white,
           centerTitle: true,
           leading:
-              const Icon(Icons.chevron_left, color: Colors.black, size: 40),
+              InkWell(
+                  onTap: (){
+                    Navigator.of(context).pop();
+                  },
+                  child: const Icon(Icons.chevron_left, color: Colors.black, size: 40)),
           title: Text("Save Card",
               textAlign: TextAlign.left,
               overflow: TextOverflow.ellipsis,

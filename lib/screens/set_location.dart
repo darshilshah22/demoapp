@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_app/screens/home_screen.dart';
 
 class SetLocation extends StatefulWidget {
   const SetLocation({Key? key}) : super(key: key);
@@ -25,7 +26,8 @@ class _SetLocationState extends State<SetLocation> {
                 'Hi Jeet,\nWelcome to \nGathrr!',
                 style: GoogleFonts.josefinSans(
                   textStyle: const TextStyle(
-                    fontSize: 80,
+                    height: 1.2,
+                    fontSize: 60,
                     fontWeight: FontWeight.w600,
                     color: Color(0xFF5663FF)
                   )
@@ -45,23 +47,33 @@ class _SetLocationState extends State<SetLocation> {
                   )
               ),
             ),
-            Container(
-              alignment: Alignment.center,
-              margin: const EdgeInsets.only(left: 36, right: 36, top: 60, bottom: 30),
-              padding: const EdgeInsets.only(top: 20, bottom: 20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: Color(color),
-              ),
-              child: Text(
-                  'Turn On GPS',
-                  style: GoogleFonts.josefinSans(
-                      textStyle: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xFFFFFFFF)
-                      )
-                  )
+            InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeScreen(),
+                  ),
+                );
+              },
+              child: Container(
+                alignment: Alignment.center,
+                margin: const EdgeInsets.only(left: 36, right: 36, top: 60, bottom: 30),
+                padding: const EdgeInsets.only(top: 20, bottom: 20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: Color(color),
+                ),
+                child: Text(
+                    'Turn On GPS',
+                    style: GoogleFonts.josefinSans(
+                        textStyle: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            color: Color(0xFFFFFFFF)
+                        )
+                    )
+                ),
               ),
             ),
           ],
